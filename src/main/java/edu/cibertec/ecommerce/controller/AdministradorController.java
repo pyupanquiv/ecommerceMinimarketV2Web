@@ -32,6 +32,12 @@ public class AdministradorController {
 	private IPedidoService pedidoService;
 	
 	private Logger logg= LoggerFactory.getLogger(AdministradorController.class);
+
+	AdministradorController(ProductoService productoService, IUsuarioService usuarioService, IPedidoService pedidoService) {
+		this.productoService = productoService;
+		this.usuarioService = usuarioService;
+		this.pedidoService = pedidoService;
+	}
 	
 	@GetMapping("")
 	public String home(Model model) {
