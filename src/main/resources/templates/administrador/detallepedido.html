@@ -41,7 +41,16 @@
 
       <!-- Blog Post -->
       <div class="card mb-4">
+
         <div class="card-body">
+          <h5 class="card-title">
+            DATOS DE ENTREGA:
+          </h5>
+          <h6 th:text="'Nombre: ' + ${pedido.usuario.nombre}"></h6>
+          <h6 th:text="'Correo: ' + ${pedido.usuario.email}"></h6>
+          <h6 th:text="'Telefono de Contacto: ' + ${pedido.usuario.telefono}"></h6>
+          <h6 th:text="'Direccion de Entrega: ' + ${pedido.usuario.direccion}"></h6>
+
           <div class="row">
            <div class="col-lg-12">
             <table class="table">

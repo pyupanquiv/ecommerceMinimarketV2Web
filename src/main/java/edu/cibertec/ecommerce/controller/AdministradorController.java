@@ -2,6 +2,7 @@ package edu.cibertec.ecommerce.controller;
 
 import java.util.List;
 
+import edu.cibertec.ecommerce.model.Usuario;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,15 +51,17 @@ public class AdministradorController {
 	
 	@GetMapping("/pedidos")
 	public String Pedidos(Model model) {
+
 		model.addAttribute("pedidos", pedidoService.findAll());
 		return "administrador/pedidos";
 	}
 	
 	@GetMapping("/detalle/{id}")	
 	public String detalle(Model model, @PathVariable Integer id) {
-		logg.info("id de la oreden {}", id);
+		logg.info("id del Pedido {}", id);
 		Pedido pedido = pedidoService.findById(id).get();
-		
+
+		model.addAttribute("pedido", pedido);
 		model.addAttribute("detalles", pedido.getDetalle());
 		return "administrador/detallepedido";
 	}
