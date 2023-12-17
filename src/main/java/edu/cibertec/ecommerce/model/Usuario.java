@@ -2,6 +2,7 @@ package edu.cibertec.ecommerce.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,9 +27,11 @@ public class Usuario {
 	private String password;
 	
 	@OneToMany(mappedBy = "usuario")
+	@JsonBackReference(value = "usuario-producto")
 	private List<Producto> productos;
 	
 	@OneToMany(mappedBy = "usuario")
+	@JsonBackReference(value = "usuario-pedido")
 	private List<Pedido> pedidos;
 
 	

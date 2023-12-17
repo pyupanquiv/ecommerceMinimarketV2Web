@@ -11,4 +11,5 @@ public interface IUsuarioService {
 	Optional<Usuario> findByid(Integer id);
 	Usuario save (Usuario usuario);
 	Optional<Usuario> findByEmail(String email);
+	void deleteById(Integer id);
 }

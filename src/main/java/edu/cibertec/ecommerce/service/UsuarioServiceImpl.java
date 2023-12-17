@@ -33,8 +33,12 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	}
 
 	@Override
+	public void deleteById(Integer id) {
+		usuarioRepository.deleteById(id);
+	}
+
+	@Override
 	public List<Usuario> findAll() {
-		
 		return usuarioRepository.findAll();
 	}
 	
